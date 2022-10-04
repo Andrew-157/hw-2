@@ -127,7 +127,7 @@ def sort_files(name):
                     file.name.replace(f'.{splitted_name[-1]}', ""))
                 sort_archive(dir_address, file.name, new_name)
                 sort_files(os.path.join(
-                    f'{dir_address}\\archive', f'{new_name}\\archive'))
+                    os.path.join(dir_address, "archive"), os.path.join(f'{new_name}', "archive")))
 
                 names_of_archives.append(new_name)
                 extensions.append(splitted_name[-1])
@@ -143,4 +143,5 @@ def sort_files(name):
         \nArchive: {names_of_archives}\nUnknown files: {names_of_files_unknown}\nExtensions: {extensions}\nUnknown extensions: {unknown_extensions}"
 
 
-print(sort_files(argv[1]))
+def main():
+    print(sort_files(argv[1]))
