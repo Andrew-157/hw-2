@@ -145,5 +145,8 @@ def sort_files(name):
 
 def main():
     print(sort_files(argv[1]))
+    
+if __name__ == '__main__':
+    main()    
 
 
